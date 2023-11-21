@@ -60,33 +60,7 @@ fetch(url, options)
             imprimirTemplate(filtroTitulo, conteCards, crearCards);
 
         })
-
-        function agregarFavoritos() {
-
-            const arti = document.querySelectorAll(".art")
-            const botonA = document.querySelectorAll(".add")
-            const botonR = document.querySelectorAll(".remove")
-        
-            const local = JSON.parse(localStorage.getItem("like")) || []
-           
-            botonA.addEventListener("click", () =>{
-                local=JSON.parse(localStorage.getItem("like")) || []
-                const conteneFavo = arti[index].dataset.id;
-                const comprobarLocal = local.some(item => item.id === conteneFavo)
-                console.log(conteneFavo)
-                if(!comprobarLocal){
-                    local.push({id: conteneFavo})
-                    console.log(local)
-                }
-                else{
-                    if(comprobarLocal){
-                        local = local.filter(item=>item.id !==conteneFavo)
-                    }
-                }
-                localStorage.setItem("like", JSON.stringify(local))
-            })
-        }
-        
+               
     })
     .catch(error => console.error(error))
 
@@ -112,7 +86,7 @@ function imprimirTemplate(lista, contenedor, fn) {
 
 // sprint 3
 
-let favoritas = []
+let favoritas = JSON.parse(localStorage.getItem('favoritas')) || [] 
 
 conteCards.addEventListener("click",(event) =>{
 
@@ -122,18 +96,16 @@ conteCards.addEventListener("click",(event) =>{
     if(dataset.accion == "add"){
         if(!favoritas.includes(dataset.id)){
             favoritas.push(dataset.id)
-            localStorage.setItem("favoritas", JSON.stringify(favoritas))
         }
         else{
             favoritas.splice(favoritas.indexOf(dataset.id), 1)
-            localStorage.setItem("favoritas", JSON.stringify(favoritas))
         }
         localStorage.setItem('favoritas', JSON.stringify(favoritas));
             }
             console.log(favoritas)
 
-
         })
     
+        
     
 
