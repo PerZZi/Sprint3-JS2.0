@@ -1,4 +1,5 @@
 
+let movies
 let allMovies
 
 const url = "https://moviestack.onrender.com/api/movies"
@@ -49,6 +50,7 @@ function datosPeli(objeto) {
     return `<article class="h-[350px] min-w-[300px] w-1/5 border-2 border-black rounded-lg bg-white flex flex-col gap-5 px-5 pb-5 items-center">
             <img class="pt-3 h-[200px]" src="${urlImage1}" alt="">
             <h2 class="text-black text-center">${objeto.title}</h2>
+            <button data-accion="borrar" data-id="${objeto.id}" class="add p-1 bg-red-800 rounded-lg text-white">Remove</button>
         </article>` }
 
 function crearTemplate(listaMovies) {

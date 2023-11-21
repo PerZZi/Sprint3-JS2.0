@@ -122,7 +122,8 @@ conteCards.addEventListener("click",(event) =>{
         if(!favoritas.includes(dataset.id)){
             favoritas.push(dataset.id)
             localStorage.setItem("favoritas", JSON.stringify(favoritas))
-        }else{
+        }
+        else{
             favoritas.splice(favoritas.indexOf(dataset.id), 1)
             localStorage.setItem("favoritas", JSON.stringify(favoritas))
         }
