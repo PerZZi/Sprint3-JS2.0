@@ -112,9 +112,10 @@ function imprimirTemplate(lista, contenedor, fn) {
 
 // sprint 3
 
+let favoritas = []
+
 conteCards.addEventListener("click",(event) =>{
 
-    let favoritas = []
 
     const dataset = event.target.dataset
     

@@ -1,5 +1,4 @@
 
-let movies
 let allMovies
 
 const url = "https://moviestack.onrender.com/api/movies"
